@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    padding: 0 10px;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d6efd;
+}
+::selection{
+    color: #fff;
+    background: #0d6efd;
+}
+.wrapper {
+    width: 720px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+}
+
+.wrapper header {
+    font-size: 22px;
+    font-weight: 600;
+    padding: 20px 30px;
+    border-bottom: 1px solid #bfbfbf;
+}
+
+.wrapper form {
+    margin: 35px 30px;
+}
+
+.wrapper form.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+form .dbl-field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.dbl-field .field {
+    height: 50px;
+    width: calc(100% / 2 - 13px);
+    position: relative;
+    display: flex;
+}
+
+form .field input,
+form .message textarea {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 18px 0 48px;
+    border-radius: 5px;
+    border: 1px solid #bfbfbf;
+    font-size: 16px;
+}
+
+.field input::placeholder,
+.message textarea::placeholder {
+    color: #bfbfbf;
+}
+.wrapper form i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    font-size: 17px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    color: #bfbfbf;
+    font-size: 17px;
+}
+
+form .message {
+    position: relative;
+}
+
+form .message i {
+    top: 30px;
+    font-size: 20px;
+}
+form .message textarea {
+    min-height: 120px;
+    max-height: 300px;
+    padding: 15px 20px 0 48px;
+    min-width: 100%;
+    max-width: 100%;
+}
+form .message textarea::-webkit-scrollbar {
+    width: 0px;
+}
+
+.field input:focus,
+.message textarea:focus {
+    border: 2px solid #0d6efd;
+    padding-left: 47px;
+}
+
+form .field input:focus ~ i,
+form .message textarea:focus ~ i{
+    color: #0d6efd;
+}
+
+form .button-area {
+    margin: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.button-area button {
+    font-size: 18px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #0d6efd;
+    padding: 13px 25px;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.button-area button:hover {
+    background: #025ce3;
+}
+
+.button-area span {
+    font-size: 17px;
+    margin-left: 30px;
+    display: none;
+}
+
+@media (max-width: 600){
+    .wrapper header {
+        text-align: center;
+    }
+    .wrapper form {
+        margin: 35px 20px;
+    }
+    form .dbl-field {
+        margin-bottom: 0px;
+        flex-direction: column;
+    }
+    form .message textarea {
+        resize: none;
+    }
+
+    .dbl-field .field {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .button-area button {
+        padding: 11px 0;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    form .button-area{
+        margin-top: 20px;
+        flex-direction: column;
+    }
+    .button-area span {
+        text-align: center;
+        margin: 20px 0;
+    }
+}
